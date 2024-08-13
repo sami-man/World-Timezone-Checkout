@@ -13,6 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:request-config>
 	<flow name="world-demo-apiFlow" doc:id="3eb26e50-1c45-4522-824b-dcb81c92ad32" >
 		<http:listener doc:name="Listener" doc:id="26ef96b5-a837-4ac0-97db-5b0feeaa7832" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
+		<logger level="INFO" doc:name="Start Logger" doc:id="b485b306-3278-4353-b738-7fdda7302ac5" message="Start log"/>
 		<http:request method="GET" doc:name="Request" doc:id="11e6b79f-4ed6-4d39-b15e-bf3a65569362" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
@@ -29,6 +30,6 @@ output application/json
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="7d2fdc2a-d213-4ef5-9cf9-ae12e274b2d9" message="#['Flow successfully completed']"/>
+		<logger level="INFO" doc:name="End Logger" doc:id="7d2fdc2a-d213-4ef5-9cf9-ae12e274b2d9" message="#['Flow successfully completed']"/>
 	</flow>
 </mule>
