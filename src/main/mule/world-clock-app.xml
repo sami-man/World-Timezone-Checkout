@@ -30,6 +30,7 @@ output application/json
 payload]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="11aedfe2-132d-427f-a006-394676e04b6e" message="Logger added to test pipeline" />
 		<logger level="INFO" doc:name="End Logger" doc:id="7d2fdc2a-d213-4ef5-9cf9-ae12e274b2d9" message="#['Flow successfully completed']"/>
 	</flow>
 </mule>
